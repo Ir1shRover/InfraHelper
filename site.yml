@@ -2,7 +2,7 @@
 - hosts: "all"
   tasks:
   - name: "Install nginx via apt"
-    ansible.builtin.apt:
+    ansible.builtin.yum:
       name: "nginx"
       state: "latest"
-      update_cache: true
+      update_cache: false
