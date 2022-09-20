@@ -1,11 +1,15 @@
 - name: Log selection
   hosts: "all"
   tasks:
-    - name: Create a directory if it does not exist
+    # - name: Create a directory if it does not exist
+    #   file:
+    #     path: /root/logs_temp
+    #     state: directory
+    #     mode: '0755'
+    - name: Ansible delete directory example
       file:
-        path: /root/logs_temp
-        state: directory
-        mode: '0755'
+        path: /root/logs_temp/
+        state: absent
     - name: Log archiving
       archive:
         path: "{{ item }}"
