@@ -1,10 +1,10 @@
-- hosts: "all"
-  archive:
-  - name: Log archiving 
-    archive:
-      path: {{ item }}
-      dest: /root/logs_temp/logs-{{inventory_hostname_short}}-{{date}}.tar.bz2
-      format: gz
-      force_archive: true
-  ignore_errors: True
-  loop: "{{ /opt/qligent/vision/Logs/ }}"
+- name: Update web servers
+  hosts: "all"
+  tasks:
+    - name: Log archiving 
+      archive:
+        path: {{ item }}
+        dest: /root/logs_temp/logs-{{inventory_hostname_short}}-{{date}}.tar.bz2
+        format: gz
+        force_archive: true
+      loop: "{{ /opt/qligent/vision/Logs/ }}"
