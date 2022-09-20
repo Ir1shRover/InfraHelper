@@ -1,10 +1,10 @@
-- name: Update web servers
+- name: Log selection
   hosts: "all"
   tasks:
-    - name: Log archiving 
+    - name: Log archiving
       archive:
         path: "{{ item }}"
-        dest: /root/logs_temp/logs-{{inventory_hostname_short}}-{{date}}.tar.gz
+        dest: /root/logs_temp/logs-"{{inventory_hostname_short}}"-"{{ ansible_date_time.date }}".tar.gz
         format: gz
         force_archive: true
       loop: 
