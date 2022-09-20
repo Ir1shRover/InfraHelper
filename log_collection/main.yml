@@ -4,7 +4,8 @@
     - name: Log archiving 
       archive:
         path: {{ item }}
-        dest: /root/logs_temp/logs-{{inventory_hostname_short}}-{{date}}.tar.bz2
+        dest: /root/logs_temp/logs-{{inventory_hostname_short}}-{{date}}.tar.gz
         format: gz
         force_archive: true
-      loop: "{{ /opt/qligent/vision/Logs/ }}"
+      loop: 
+        - /opt/qligent/vision/Logs/
