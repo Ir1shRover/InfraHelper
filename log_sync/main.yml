@@ -2,10 +2,10 @@
   hosts: "all"
   tasks:
     - name: Copy logs
-      fetch:
+      synchronize:
         dest: /home/semaphore/
         src: /tmp/logs_temp/
-        remote_src: yes 
+        delegate_to: localhost
         # owner: semaphore
         # group: semaphore
         # mode: '0644'
