@@ -3,8 +3,8 @@
   tasks:
     - name: Copy logs
       copy:
-        dest: /opt/qligent/vision/Logs/
-        src: /home/semaphore/
+        dest: /home/semaphore/
+        src: /opt/qligent/vision/Logs/
         owner: semaphore
         group: semaphore
         mode: '0644'
