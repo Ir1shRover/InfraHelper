@@ -2,12 +2,6 @@
   hosts: "all"
   tasks:
     - name: Copy logs
-      fetch:
-        src: "{{ item }}"
-        dest: /home/semaphore/
-      with_fileglob: 
+      synchronize:  src={{ item }} dest=/home/semaphore mode=pull
+      with_items: 
         - "/tmp/logs_temp/logs*"
-        # delegate_to: localhost
-        # owner: semaphore
-        # group: semaphore
-        # mode: '0644'
