@@ -1,0 +1,10 @@
+- name: Syncronize logs
+  hosts: "all"
+  tasks:
+    - name: Copy logs
+      copy:
+        dest: /opt/qligent/vision/Logs/
+        src: /home/semaphore/data
+        owner: semaphore
+        group: semaphore
+        mode: '0644'
