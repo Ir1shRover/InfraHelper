@@ -3,8 +3,9 @@
   tasks:
     - name: Copy logs
       fetch:
-        src: /tmp/logs_temp/log.tar.gz
-        dest: /home/semaphore/log-{{inventory_hostname_short}}-{{ ansible_date_time.date }}.tar.gz
+        src: "{{ item }}"
+        dest: /home/semaphore/
+      with_fileglob: "/tmp/logs_temp/logs-*"
         # delegate_to: localhost
         # owner: semaphore
         # group: semaphore
