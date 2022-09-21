@@ -5,7 +5,8 @@
       fetch:
         src: "{{ item }}"
         dest: /home/semaphore/
-      with_fileglob: "/tmp/logs_temp/logs-*"
+      with_fileglob: 
+        - "/tmp/logs_temp/logs*"
         # delegate_to: localhost
         # owner: semaphore
         # group: semaphore
