@@ -5,6 +5,7 @@
       copy:
         dest: /home/semaphore/
         src: /tmp/logs_temp/
+        remote_src: yes 
         # owner: semaphore
         # group: semaphore
         # mode: '0644'
