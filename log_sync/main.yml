@@ -4,7 +4,7 @@
     - name: Copy logs
       copy:
         dest: /home/semaphore/
-        src: /opt/qligent/vision/Logs/
+        src: /root/logs_temp/
         owner: semaphore
         group: semaphore
         mode: '0644'
