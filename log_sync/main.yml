@@ -2,7 +2,7 @@
   hosts: "all"
   tasks:
     - name: Copy logs
-      copy:
+      fetch:
         dest: /home/semaphore/
         src: /tmp/logs_temp/
         remote_src: yes 
