@@ -13,7 +13,7 @@
     - name: Log archiving
       archive:
         path: "{{ item }}"
-        dest: /tmp/logs_temp/logs-{{inventory_hostname_short}}-{{ ansible_date_time.date }}.tar.gz
+        dest: /tmp/logs_temp/logs-{{ inventory_hostname_short }}-{{ ansible_date_time.date }}.tar.gz
         format: gz
         force_archive: true
       loop: 
